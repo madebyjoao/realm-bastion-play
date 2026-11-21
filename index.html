@@ -328,7 +328,7 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 .c-det .tdet{margin-top:0}.arm .loadout{margin:0}.c-list .tgrid{margin-top:0}.hro .heroes{margin:0}.c-list .hero-blurb{margin-top:2px}
 .c-det>.row{margin-top:8px}
 .pf input{box-sizing:border-box}
-.diffs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.df{padding:6px 4px;align-items:center;text-align:center}.df small{font-size:10.5px}
+.diffs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.df{padding:6px 4px;align-items:center;text-align:center}.df small{font-size:10.5px}
 @media (orientation:landscape) and (max-height:600px){
   .hub{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
   .topbar{grid-column:2;grid-row:1;padding:calc(5px + env(safe-area-inset-top)) calc(10px + env(safe-area-inset-right)) 3px 8px}
@@ -407,11 +407,27 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 .es.on{color:#ffd34a;filter:drop-shadow(0 2px 8px rgba(255,200,60,.45))}.es.new{animation:starPop .7s cubic-bezier(.2,1.6,.4,1) both}.es.new:nth-child(2){animation-delay:.25s}.es.new:nth-child(3){animation-delay:.5s}
 @keyframes starPop{0%{transform:scale(0) rotate(-40deg)}100%{transform:scale(1) rotate(0)}}
 .hw.daily{border-color:rgba(255,211,74,.4);background:linear-gradient(90deg,rgba(255,211,74,.14),rgba(255,255,255,.03))}.hw.daily .gi{color:#ffd34a}.hw.daily.done{opacity:.7}
+
+#acts{position:fixed;right:calc(10px + env(safe-area-inset-right));bottom:calc(96px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;flex-wrap:wrap-reverse;align-content:flex-start;gap:7px;max-height:calc(100% - 210px);pointer-events:none;z-index:6}
+body.menu #acts{display:none!important}
+.ab{pointer-events:auto;position:relative;overflow:hidden;width:50px;height:50px;border-radius:15px;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.35);color:var(--ink);padding:0}
+.ab .ai{font-size:21px;line-height:1}.ab .gi{color:#ffe2a8}.ab.sp .gi{color:#ffb070}.ab.sp[data-spell=militia] .gi{color:#9fd4ff}
+.ab small{font-size:9.5px;font-weight:700;opacity:.9;max-width:48px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ab .cdr{position:absolute;left:0;right:0;bottom:0;height:var(--cd,0%);background:rgba(0,0,0,.5);pointer-events:none;transition:height .25s linear}
+.ab.cd{opacity:.7}
+.ab.ready{border-color:#ffd98a;box-shadow:0 0 0 2px rgba(255,217,138,.35)}
+.ab.aim{border-color:#ff8a4a;box-shadow:0 0 0 3px rgba(255,138,74,.6);animation:habPulse 1s ease-in-out infinite}
+body.aiming canvas{cursor:crosshair}
+.round.early{background:linear-gradient(180deg,#ffe9a8,#e8b04a);color:#2a1806;border-color:#ffe7b0}.round.early .gi{color:#2a1806}
+@media (max-height:600px){#acts{bottom:calc(70px + env(safe-area-inset-bottom));max-height:calc(100% - 130px)}.ab{width:42px;height:42px;border-radius:13px}.ab .ai{font-size:17px}.ab small{font-size:8.5px}}
+.gi[data-c=legend]{color:#c99bff}
+.df.legend{border-color:rgba(190,130,255,.6)}
+.iab{margin:8px 0;padding:8px 10px;border:1px solid rgba(255,217,138,.35);border-radius:12px;background:rgba(255,217,138,.06)}.iab h4{margin:0 0 3px;color:#ffd98a;font-size:13px}.iab p{margin:0;font-size:12px;opacity:.9}
 </style><link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Realm Bastion">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<script>window.RB_STANDALONE=true;window.RB_VER="20261121-1719-15a0816";</script>
+<script>window.RB_STANDALONE=true;window.RB_VER="20261121-2025-bf62447";</script>
 </head><body>
 <div id="app"></div>
 <div id="top">
@@ -427,6 +443,7 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 <div id="hurt"></div>
 <div id="banner"></div>
 <div id="combo"></div>
+<div id="acts"></div>
 <div id="bottom">
   <button id="buildBtn" class="round"><svg class=gi data-i=build><use href=#i-build></use></svg><small>Build</small></button>
   <button id="gateBtn" class="round sm gate" style="display:none"><svg class=gi data-i=bridge_gate><use href=#i-bridge_gate></use></svg><small>Route</small></button>
@@ -434,6 +451,7 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
   <button id="heroBtn" class="round sm gate hab" style="display:none"><span class="hico"></span><small>Hero</small><i class="cdr"></i></button>
   <button id="camBtn" class="round sm"><svg class=gi data-i=view><use href=#i-view></use></svg><small>View</small></button>
   <div id="nextInfo"></div>
+  <button id="earlyBtn" class="round sm early" style="display:none"><svg class=gi data-i=ff><use href=#i-ff></use></svg><small>+0</small></button>
   <button id="goBtn" class="round go"><svg class=gi data-i=wave><use href=#i-wave></use></svg><small>Wave 1</small></button>
 </div>
 <div id="quick"></div>
