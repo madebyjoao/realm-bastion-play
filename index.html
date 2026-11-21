@@ -397,11 +397,21 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 #combo{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top));transform:translateX(-50%);z-index:6;pointer-events:none;font-family:Georgia,serif;font-weight:800;font-size:20px;color:#ffd98a;text-shadow:0 2px 0 #4a2a00,0 0 14px rgba(255,190,60,.6);opacity:0;white-space:nowrap}
 #combo.show{animation:combo 1.3s ease-out forwards}#combo.big{font-size:26px;color:#ffb07a}
 @keyframes combo{0%{opacity:0;transform:translateX(-50%) scale(.6)}12%{opacity:1;transform:translateX(-50%) scale(1.15)}25%{transform:translateX(-50%) scale(1)}75%{opacity:1}100%{opacity:0;transform:translateX(-50%) translateY(-14px)}}
+
+/* map stars */
+.mstars{display:inline-flex;gap:1px;margin-left:4px;vertical-align:middle}.mstars i{font-size:12px;color:rgba(255,255,255,.18);font-style:normal}.mstars i.on{color:#ffd34a}
+.mch{font-size:11px;opacity:.75;margin:2px 0 3px;display:flex;gap:4px;align-items:center}.mch .gi{color:#ffd34a;font-size:11px}
+.stot{margin-left:auto;font-weight:800;color:#ffd34a;font-size:14px;display:flex;align-items:center;gap:4px}
+.estars{display:flex;justify-content:center;gap:12px;margin:2px 0 8px}
+.es{display:flex;flex-direction:column;align-items:center;font-size:28px;color:rgba(255,255,255,.15)}.es small{font-size:10px;font-weight:700;color:var(--ink);opacity:.6;max-width:84px;text-align:center}
+.es.on{color:#ffd34a;filter:drop-shadow(0 2px 8px rgba(255,200,60,.45))}.es.new{animation:starPop .7s cubic-bezier(.2,1.6,.4,1) both}.es.new:nth-child(2){animation-delay:.25s}.es.new:nth-child(3){animation-delay:.5s}
+@keyframes starPop{0%{transform:scale(0) rotate(-40deg)}100%{transform:scale(1) rotate(0)}}
+.hw.daily{border-color:rgba(255,211,74,.4);background:linear-gradient(90deg,rgba(255,211,74,.14),rgba(255,255,255,.03))}.hw.daily .gi{color:#ffd34a}.hw.daily.done{opacity:.7}
 </style><link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Realm Bastion">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<script>window.RB_STANDALONE=true;window.RB_VER="20261121-1714-a53f97b";</script>
+<script>window.RB_STANDALONE=true;window.RB_VER="20261121-1719-15a0816";</script>
 </head><body>
 <div id="app"></div>
 <div id="top">
