@@ -376,11 +376,22 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 .etip{font-size:12.5px!important;text-align:left;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 10px;margin:8px 0 2px;display:flex;gap:6px;align-items:flex-start;opacity:.95!important}
 .ov .row{flex-wrap:wrap;gap:6px;margin-top:10px}
 @media (orientation:landscape) and (max-height:420px){.ov .crest{display:none}.mpips{margin:2px 0 6px}.ov.win,.ov.lose{padding:10px 14px}.ov .big{font-size:24px}}
+
+/* boon picker */
+.ov.boons{width:min(94vw,640px);max-height:calc(100% - 16px);overflow-y:auto;padding:14px;animation:ovIn .35s cubic-bezier(.2,1.3,.4,1)}
+.bcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0}
+.boon{display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 8px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));color:var(--ink);text-align:center;min-height:150px}
+.boon .bi{font-size:30px;color:#ffe2a8;margin-bottom:2px}.boon b{font-size:14px}.boon .btag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;opacity:.7}.boon .bd{font-size:12px;line-height:1.35;opacity:.88}
+.boon.t{border-color:rgba(143,208,255,.45)}.boon.t .btag{color:#8fd0ff}.boon.c{border-color:rgba(255,120,100,.5)}.boon.c .btag{color:#ff9a8a}.boon.g .btag{color:#ffd98a}
+.boon:active{transform:scale(.97)}
+#bReroll[disabled]{opacity:.45}
+@media (max-width:480px){.bcards{grid-template-columns:1fr}.boon{flex-direction:row;flex-wrap:wrap;text-align:left;min-height:0;align-items:center;column-gap:8px}.boon .bi{font-size:26px}.boon .bd{flex-basis:100%}}
+@media (orientation:landscape) and (max-height:420px){.boon{min-height:0;padding:8px 6px}.boon .bi{font-size:22px}.ov.boons .big{font-size:22px}}
 </style><link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Realm Bastion">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<script>window.RB_STANDALONE=true;window.RB_VER="20261121-1629-94cc379";</script>
+<script>window.RB_STANDALONE=true;window.RB_VER="20261121-1706-a31d92f";</script>
 </head><body>
 <div id="app"></div>
 <div id="top">
