@@ -1,8 +1,8 @@
-// Realm Bastion service worker (Netlify build only). 20261123-2112-5e3d0f3 and ["index.html", "app.js", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png", "assets/Barbarian.js", "assets/Knight.js", "assets/Mage.js", "assets/Rogue_Hooded.js", "assets/Skeleton_Mage.js", "assets/Skeleton_Minion.js", "assets/Skeleton_Rogue.js", "assets/Skeleton_Warrior.js", "assets/world.js"] are filled in by tools/netlify_zip.sh.
+// Realm Bastion service worker (Netlify build only). 20261124-1958-71c9294 and ["index.html", "app.js", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png", "assets/Barbarian.js", "assets/Knight.js", "assets/Mage.js", "assets/Rogue_Hooded.js", "assets/Skeleton_Mage.js", "assets/Skeleton_Minion.js", "assets/Skeleton_Rogue.js", "assets/Skeleton_Warrior.js", "assets/world.js"] are filled in by tools/netlify_zip.sh.
 // index.html and app.js: network first (fresh on every launch with internet; 'no-cache' revalidates, so an unchanged
 // file costs only a 304), cached copy offline. Everything else (models, icons): from this version's cache, so the game also runs offline. A new version gets a new cache name;
 // the old one is deleted when the new worker takes over. version.json is never cached (the page checks it on launch).
-const CACHE = 'realm-bastion-20261123-2112-5e3d0f3';
+const CACHE = 'realm-bastion-20261124-1958-71c9294';
 const CORE = ["index.html", "app.js", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png", "assets/Barbarian.js", "assets/Knight.js", "assets/Mage.js", "assets/Rogue_Hooded.js", "assets/Skeleton_Mage.js", "assets/Skeleton_Minion.js", "assets/Skeleton_Rogue.js", "assets/Skeleton_Warrior.js", "assets/world.js"];
 
 // Safari refuses to serve a redirected response to a page load: copy it into a plain response first
