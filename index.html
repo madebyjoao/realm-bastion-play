@@ -501,11 +501,27 @@ body.aiming canvas{cursor:crosshair}
 .ctr{display:flex;align-items:center;gap:8px;text-align:left;border:1px solid var(--line);border-radius:12px;padding:7px 9px;background:rgba(255,255,255,.05)}
 .ctr.on{border-color:#ff8a70;background:rgba(255,110,80,.13)}.ctr .ci{font-size:20px}.ctr .ci .gi{color:#ffb0a0}.ctrs .ctr .ct{flex:1;min-width:0;text-align:left;align-items:flex-start}.ctr .ct b{font-size:12.5px;display:block}.ctr .ct small{font-size:11px;opacity:.8;line-height:1.3;display:block}
 .ctr .cr{font-size:12px;font-weight:800;color:#ffb0a0;white-space:nowrap}.ctr:not(.on) .cr{opacity:.6}
+
+/* batch 3: trials, crusade, legendary */
+.hw3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.hw3 .hw{flex-direction:column;align-items:flex-start;gap:3px;padding:8px 9px}.hw3 .hw .gi{font-size:18px}.hw3 .hw small{font-size:10.5px}
+.hw.trl .gi{color:#ffd34a}.hw.crs .gi{color:#9fd4ff}
+.trl-d{font-size:11.5px;opacity:.85;margin:6px 0 4px;line-height:1.35}.trl-t{display:flex;gap:6px;margin:0 0 7px;font-size:20px}.trl-t .gi{color:#ffe2a8}.trl-ok{font-style:normal;font-size:11px;color:#9fe08a;margin-left:4px}
+.crs-route{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+.crs-n{flex:1;min-width:92px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:8px 5px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.05)}
+.crs-n b{font-size:11.5px;line-height:1.2}.crs-n small{font-size:10.5px;opacity:.7}.crs-i{font-size:24px}.crs-n.won{border-color:#9fe08a;background:rgba(159,224,138,.1)}.crs-n.won .gi{color:#9fe08a}
+.crs-n.now{border-color:var(--gold);background:rgba(255,217,138,.15);box-shadow:0 0 0 2px rgba(255,217,138,.25)}.crs-n.lost{border-color:#ff7a6a;background:rgba(255,100,80,.1)}.crs-n.lost .gi{color:#ff8a7a}
+@media (max-width:520px){.crs-n{min-width:58px;padding:6px 3px}.crs-n b{font-size:10px}.crs-n small{font-size:9.5px}.crs-i{font-size:19px}.crs-l{width:4px!important}}
+.crs-l{flex:none;width:10px;align-self:center;height:2px;background:rgba(255,217,138,.4)}
+.crs-stats{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px;margin:4px 2px 10px}.crs-stats span{display:flex;align-items:center;gap:4px}.crs-stats b{color:#ffd98a}
+.crs-new p{font-size:12.5px;line-height:1.45;opacity:.9}.crs-best{display:block;text-align:center;opacity:.65;font-size:11.5px;margin-top:8px}.crs-end{font-size:13px;text-align:center}
+.asc{display:flex;flex-direction:column;align-items:center;width:100%;margin:5px 0 3px;padding:7px 8px;border-radius:11px;border:1px solid #ffd34a;background:linear-gradient(90deg,rgba(255,190,60,.25),rgba(255,230,140,.18));color:#ffe9a8;font-weight:800;font-size:13px}
+.asc small{font-weight:500;font-size:10.5px;opacity:.85}.asc.off{border-style:dashed;border-color:rgba(255,211,74,.4);background:none;font-weight:600;font-size:11.5px;opacity:.75;flex-direction:row;gap:5px;justify-content:center}
+.tmb-lg{background:rgba(255,200,60,.25)!important;color:#ffe27a!important;border-color:#ffd34a!important}
 </style><link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Realm Bastion">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<script>window.RB_STANDALONE=true;window.RB_VER="20261124-2112-068549c";</script>
+<script>window.RB_STANDALONE=true;window.RB_VER="20261124-2134-14e0bf8";</script>
 </head><body>
 <div id="app"></div>
 <div id="top">
