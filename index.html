@@ -411,7 +411,7 @@ body.quick-open #camPad,body.sheet-open #camPad{opacity:0;pointer-events:none}
 #acts{position:fixed;right:calc(10px + env(safe-area-inset-right));bottom:calc(96px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;flex-wrap:wrap-reverse;align-content:flex-start;gap:7px;max-height:calc(100% - 210px);pointer-events:none;z-index:6}
 body.menu #acts{display:none!important}
 .ab{pointer-events:auto;position:relative;overflow:hidden;width:50px;height:50px;border-radius:15px;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.35);color:var(--ink);padding:0}
-.ab .ai{font-size:21px;line-height:1}.ab .gi{color:#ffe2a8}.ab.sp .gi{color:#ffb070}.ab.sp[data-spell=militia] .gi{color:#9fd4ff}
+.ab .ai{font-size:21px;line-height:1}.ab .gi{color:#ffe2a8}.ab.sp .gi{color:#ffb070}.ab.sp[data-spell=militia] .gi{color:#9fd4ff}.ab.hr{border-color:#ffd34a}.ab.hr .gi{color:#ffe27a}
 .ab small{font-size:9.5px;font-weight:700;opacity:.9;max-width:48px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ab .cdr{position:absolute;left:0;right:0;bottom:0;height:var(--cd,0%);background:rgba(0,0,0,.5);pointer-events:none;transition:height .25s linear}
 .ab.cd{opacity:.7}
@@ -465,11 +465,47 @@ body.aiming canvas{cursor:crosshair}
 .hcard2 .tier.won{border-color:rgba(255,211,74,.6);background:rgba(255,211,74,.12)}.hcard2 .tier[disabled]{opacity:.4}
 .hcard2 .lockmsg{font-size:11.5px;opacity:.8;margin:8px 0 0}
 .hw.hunt .gi{color:#ff8a6a}
+
+/* hero skills and gear (Nov 2026) */
+.htabs{display:flex;gap:6px;margin:0 0 8px}.htabs button{flex:1;position:relative;border:1px solid var(--line);border-radius:999px;padding:7px 6px;font-size:13px;font-weight:800;background:rgba(255,255,255,.06)}
+.htabs button.on{border-color:var(--gold);background:rgba(255,217,138,.18);color:var(--gold)}.htabs .dot{position:absolute;top:3px;right:9px;width:7px;height:7px;border-radius:50%;background:#ff6a4a}
+.btn.sm{flex:none;padding:5px 9px;font-size:12px;border-radius:10px}.btn.sm.poor{opacity:.45}
+.hp-mast{padding:8px 10px;border-radius:13px;background:rgba(255,217,138,.07);border:1px solid rgba(255,217,138,.25)}
+.hp-ml{display:flex;justify-content:space-between;align-items:baseline}.hp-ml b{color:#ffd98a;font-size:14px}.hp-ml small{opacity:.75}
+.hp-bar{height:7px;border-radius:5px;background:rgba(255,255,255,.12);margin:5px 0;overflow:hidden}.hp-bar i{display:block;height:100%;background:linear-gradient(90deg,#ffb84a,#ffe08a)}
+.hp-mast>small{font-size:11px;opacity:.7}
+.hp-pts{display:flex;align-items:center;justify-content:space-between;margin:8px 2px;font-size:12.5px}.hp-pts b{color:#ffd98a;font-size:15px}
+.hp-sks{display:flex;flex-direction:column;gap:6px}
+.hp-sk{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.05);border-radius:13px;padding:7px 9px}
+.hp-sk.ult{border:1px solid rgba(255,211,74,.45);background:rgba(255,211,74,.07)}.hp-sk.lock{opacity:.6}
+.hp-si{font-size:22px;flex:none}.hp-si .gi{color:#ffe2a8}.hp-sk.ult .hp-si .gi{color:#ffd34a}
+.hp-st{flex:1;min-width:0}.hp-st b{font-size:13px}.hp-st small{display:block;font-size:11.5px;opacity:.85;line-height:1.3}.hp-st small.nx{opacity:.55}
+.hp-pips{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}.hp-pips i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2)}.hp-pips i.y{background:#ffd98a}
+.hp-sk .pb{flex:none;min-width:0;width:38px;height:34px;padding:0;font-size:18px}
+.hg-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.hg-slot{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:7px 5px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-size:11.5px}
+.hg-slot.empty{opacity:.6;border-style:dashed}.hg-slot>small:first-child{opacity:.6;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}.hg-slot b{font-size:11.5px;line-height:1.2}.hg-slot small{font-size:10.5px;opacity:.85;line-height:1.25}
+.hg-i{font-size:22px;line-height:1}.hg-slot .btn.sm{margin-top:3px;padding:3px 8px;font-size:11px}
+.hg-note{font-size:11px;opacity:.7;margin:7px 2px}
+.hg-bag{display:flex;flex-direction:column;gap:5px}
+.hg-it{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border-radius:12px;padding:6px 8px}
+.hg-t{flex:1;min-width:0}.hg-t b{font-size:12.5px}.hg-t small{display:block;font-size:11px;opacity:.8}
+.hg-b{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:52%}.hg-on{font-size:11.5px;font-weight:800;color:#9fe08a;padding:4px 6px}
+.egear small{opacity:.75}
+
+/* War Contracts */
+.ctr-row>span{display:flex;align-items:center;gap:4px;color:#ff9a8a}.ctr-row .ctr-r{font-size:11.5px;color:#ffb0a0;margin-left:4px}.ctr-row .ctr-r.off{opacity:.55;color:var(--ink)}.ctr-row i .gi{color:#ffb0a0}
+.ctr-top{display:flex;gap:10px;align-items:center;padding:9px 11px;border-radius:13px;background:rgba(255,90,70,.08);border:1px solid rgba(255,120,100,.35);margin-bottom:8px}
+.ctr-top div{display:flex;flex-direction:column;align-items:center;min-width:76px}.ctr-top b{font-size:18px;color:#ffb0a0}.ctr-top small{font-size:11.5px;color:var(--gold)}.ctr-top p{margin:0;font-size:11.5px;opacity:.8;line-height:1.35}
+.ctrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px}
+.ctr{display:flex;align-items:center;gap:8px;text-align:left;border:1px solid var(--line);border-radius:12px;padding:7px 9px;background:rgba(255,255,255,.05)}
+.ctr.on{border-color:#ff8a70;background:rgba(255,110,80,.13)}.ctr .ci{font-size:20px}.ctr .ci .gi{color:#ffb0a0}.ctrs .ctr .ct{flex:1;min-width:0;text-align:left;align-items:flex-start}.ctr .ct b{font-size:12.5px;display:block}.ctr .ct small{font-size:11px;opacity:.8;line-height:1.3;display:block}
+.ctr .cr{font-size:12px;font-weight:800;color:#ffb0a0;white-space:nowrap}.ctr:not(.on) .cr{opacity:.6}
 </style><link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-title" content="Realm Bastion">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<script>window.RB_STANDALONE=true;window.RB_VER="20261124-2042-0f21616";</script>
+<script>window.RB_STANDALONE=true;window.RB_VER="20261124-2112-068549c";</script>
 </head><body>
 <div id="app"></div>
 <div id="top">
